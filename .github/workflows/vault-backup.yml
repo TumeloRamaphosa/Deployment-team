@@ -1,0 +1,58 @@
+# Skills Vault backup: GitHub (primary) → Gitea mirror + Google Drive copy.
+# Each target is skipped cleanly until its secrets/vars are set.
+name: Vault Backup
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 1 * * *"   # daily 03:17 Johannesburg
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/validate_vault.py
+
+  gitea-mirror:
+    needs: validate
+    runs-on: ubuntu-latest
+    env:
+      GITEA_URL: ${{ vars.GITEA_URL }}               # e.g. https://git.studex.example
+      GITEA_REPO: ${{ vars.GITEA_REPO }}             # e.g. studex/deployment-team
+      GITEA_USER: ${{ vars.GITEA_USER }}
+      GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push mirror to Gitea
+        run: |
+          if [ -z "$GITEA_URL" ] || [ -z "$GITEA_TOKEN" ]; then
+            echo "::notice::Gitea not configured (vars.GITEA_URL / secrets.GITEA_TOKEN) — skipping"; exit 0; fi
+          host="${GITEA_URL#https://}"
+          git push --prune "https://${GITEA_USER}:${GITEA_TOKEN}@${host}/${GITEA_REPO}.git" \
+            "+HEAD:refs/heads/main" "+refs/tags/*:refs/tags/*"
+
+  drive-copy:
+    needs: validate
+    runs-on: ubuntu-latest
+    env:
+      RCLONE_DRIVE_SA: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+      DRIVE_FOLDER_ID: ${{ vars.GDRIVE_VAULT_FOLDER_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync vault to Google Drive (rclone, open source)
+        run: |
+          if [ -z "$RCLONE_DRIVE_SA" ] || [ -z "$DRIVE_FOLDER_ID" ]; then
+            echo "::notice::Drive not configured (secrets.GDRIVE_SERVICE_ACCOUNT_JSON / vars.GDRIVE_VAULT_FOLDER_ID) — skipping"; exit 0; fi
+          curl -sSf https://rclone.org/install.sh | sudo bash
+          printf '%s' "$RCLONE_DRIVE_SA" > /tmp/sa.json
+          rclone sync . ":drive:" --drive-service-account-file /tmp/sa.json \
+            --drive-root-folder-id "$DRIVE_FOLDER_ID" --exclude ".git/**" --checksum -v
+          rm -f /tmp/sa.json

@@ -1,0 +1,156 @@
+# Studex Deployment Team rollout list. One owner/repo per line. Lines starting with # are skipped.
+# Run: scripts/rollout.sh --apply   (opens one PR per repo, never pushes to main)
+
+# --- Wave 1: core OS + live businesses (start here) ---
+TumeloRamaphosa/studex-os
+TumeloRamaphosa/Stud-Bot-Launch-
+TumeloRamaphosa/Portable-agents
+TumeloRamaphosa/studex-central-command
+TumeloRamaphosa/Stud-Ex-Global-Markets-
+TumeloRamaphosa/studex-coffee
+TumeloRamaphosa/studex-meat
+TumeloRamaphosa/studex-auto-meat
+TumeloRamaphosa/global-markets-platform
+TumeloRamaphosa/studex-agents-nest
+TumeloRamaphosa/studex-agent-workspace
+StudEX/StudExHermes-Command
+StudEX/super-agents
+StudEX/agentic-lab-v3
+
+# --- Wave 2: active builds ---
+TumeloRamaphosa/Operation-Daily-Spear
+TumeloRamaphosa/Dr.Yanga
+TumeloRamaphosa/Linux-Studex-
+TumeloRamaphosa/new-worlds
+TumeloRamaphosa/The-Nexus-Agents-NEst
+TumeloRamaphosa/Eswatini
+TumeloRamaphosa/Grokbot-
+TumeloRamaphosa/speakingAgnts
+TumeloRamaphosa/studex-agents-vault
+TumeloRamaphosa/studex-station
+TumeloRamaphosa/robusca-brain
+TumeloRamaphosa/studbot-robusca-handoff
+StudEX/agents-dr.fixit
+TumeloRamaphosa/Our-OS
+TumeloRamaphosa/studex-sovereign-trade-platform
+TumeloRamaphosa/vm-africabiz-prod
+TumeloRamaphosa/skunk-works
+TumeloRamaphosa/Agri-Department-
+TumeloRamaphosa/cryptopia-fde-library
+TumeloRamaphosa/Cryptopia
+TumeloRamaphosa/studex-super-agents-site
+TumeloRamaphosa/agentomy
+TumeloRamaphosa/superagents-site
+TumeloRamaphosa/studx-os
+TumeloRamaphosa/studex-global-markets
+TumeloRamaphosa/kigali-summit-automations
+TumeloRamaphosa/Agentic-Engineer
+TumeloRamaphosa/studbot-runtime
+TumeloRamaphosa/dark-factory
+TumeloRamaphosa/studex-nexus
+TumeloRamaphosa/studex-marketing-site
+TumeloRamaphosa/SGM-RWA-1
+
+# --- Wave 3: everything else you own (uncomment as needed) ---
+# TumeloRamaphosa/claude-md
+# TumeloRamaphosa/N
+# TumeloRamaphosa/Bitfury
+# TumeloRamaphosa/Meetings--coms
+# TumeloRamaphosa/Obsidian-brain
+# TumeloRamaphosa/Home-Auto
+# TumeloRamaphosa/Thato
+# TumeloRamaphosa/Arcade
+# TumeloRamaphosa/Bunny-Rabbit
+# TumeloRamaphosa/Global-Health
+# TumeloRamaphosa/hermes-memory
+# TumeloRamaphosa/Nozi-Corp
+# TumeloRamaphosa/RS1-POC
+# TumeloRamaphosa/IGH
+# TumeloRamaphosa/bohlale-home
+# TumeloRamaphosa/studex-super-agents
+# TumeloRamaphosa/studex-rwanda
+# TumeloRamaphosa/studex-code
+# StudEX/Cafe-Noir
+# TumeloRamaphosa/studex-mobile
+# TumeloRamaphosa/studex-agent-ecosystem
+# TumeloRamaphosa/vm-globalmarkets-prod
+# TumeloRamaphosa/vm-pharma-prod
+# TumeloRamaphosa/vm-arttech-prod
+# TumeloRamaphosa/vm-ntechlab-prod
+# TumeloRamaphosa/studex-content
+# TumeloRamaphosa/agents-studex
+# TumeloRamaphosa/conductor-playground
+# TumeloRamaphosa/studex-rileyjarvis
+# TumeloRamaphosa/studex-agentic-os
+# TumeloRamaphosa/just-sa-dark-factory
+# TumeloRamaphosa/Working-agents
+# TumeloRamaphosa/Studex-World-
+# StudEX/ntech-labs-
+# TumeloRamaphosa/tradeweek-sa-russia
+# TumeloRamaphosa/StudEx-Valley-OS
+# TumeloRamaphosa/studex-meat-ops
+# TumeloRamaphosa/StudEx-MiniMax
+# TumeloRamaphosa/studex-mission-control
+# StudEX/auto-agent-lab
+# StudEX/Pharmasyntez-Group---SGM-
+# TumeloRamaphosa/static-global-markets
+# TumeloRamaphosa/meatsa-research
+# TumeloRamaphosa/studex-command-center
+# TumeloRamaphosa/adam-tools
+# TumeloRamaphosa/grm-africa
+# TumeloRamaphosa/Ryde-1-RSA
+# TumeloRamaphosa/studex-computer
+# TumeloRamaphosa/Social-Analytics
+# TumeloRamaphosa/safesight-laisa-proposal
+# TumeloRamaphosa/studex-paperclip-page
+# StudEX/Africa-Coffee-Bean
+# TumeloRamaphosa/Virtual-Spaces
+# TumeloRamaphosa/Global-Trader
+# TumeloRamaphosa/Global-Trader-
+# TumeloRamaphosa/StudEx-KIlo-Claw
+# TumeloRamaphosa/AI-Trader
+# TumeloRamaphosa/AI-Trader-
+# TumeloRamaphosa/content-bank
+# StudEX/-ai-content-studio-
+# TumeloRamaphosa/Agent-Doctor-Fixer
+# StudEX/AI-Market-Audit-
+# TumeloRamaphosa/Medical-Research-
+# TumeloRamaphosa/command-center
+# TumeloRamaphosa/naledi-reports
+# TumeloRamaphosa/Afrika-Biz-
+# StudEX/Afrikabiz-
+# TumeloRamaphosa/studex-global-markets-mvp
+# StudEX/Monday-Meat-
+# StudEX/Xiaonima-Larry-
+# StudEX/Xioanima
+# StudEX/Agentic-Trader-
+# TumeloRamaphosa/Studex-Marketing-Factory
+# TumeloRamaphosa/naledi-command
+# TumeloRamaphosa/naledi-nexus-memory
+# StudEX/StudEx-Cognitive-System-
+# TumeloRamaphosa/studex-factory-site
+# TumeloRamaphosa/studex-wholesale
+# TumeloRamaphosa/studex-price-agent
+# TumeloRamaphosa/Larry-Marketing-Brain-
+# TumeloRamaphosa/sgm-kucoin-partnership
+# TumeloRamaphosa/GoBot-Board
+# TumeloRamaphosa/KuCoin-StudEx-
+# TumeloRamaphosa/Kucoin-StudEx
+# TumeloRamaphosa/WebPutterUpper
+# TumeloRamaphosa/StudEx-AI-
+# TumeloRamaphosa/sktm-studex-proposal
+# TumeloRamaphosa/Stud-Ex-Global-Markets-Pulsar-Oracle-
+# TumeloRamaphosa/SGM-Pulsar-1
+# TumeloRamaphosa/SGM-NLMK
+# TumeloRamaphosa/Studex-Meat-App-
+# StudEX/Rydex
+
+# --- Excluded on purpose: forks, backups/archives, profile README, this repo ---
+# TumeloRamaphosa/openclaw-api-list (fork)
+# TumeloRamaphosa/MiroFish-Offline (fork)
+# TumeloRamaphosa/distributed_exchange_truffle_class_3 (fork)
+# TumeloRamaphosa/macbook-md-archive (archive)
+# TumeloRamaphosa/hermes-config-backup (backup)
+# TumeloRamaphosa/TumeloRamaphosa (profile README)
+# TumeloRamaphosa/Deployment-team (this pack)
+# cosmosiris/studex-website (2018, other owner)
