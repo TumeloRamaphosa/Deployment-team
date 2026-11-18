@@ -45,6 +45,7 @@ jobs:
     env:
       RCLONE_DRIVE_SA: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
       DRIVE_FOLDER_ID: ${{ vars.GDRIVE_VAULT_FOLDER_ID }}
+      SHARED_DRIVE_ID: ${{ vars.GDRIVE_SHARED_DRIVE_ID }}   # service accounts have no My Drive storage: use a Shared Drive
     steps:
       - uses: actions/checkout@v4
       - name: Sync vault to Google Drive (rclone, open source)
@@ -53,6 +54,7 @@ jobs:
             echo "::notice::Drive not configured (secrets.GDRIVE_SERVICE_ACCOUNT_JSON / vars.GDRIVE_VAULT_FOLDER_ID) — skipping"; exit 0; fi
           curl -sSf https://rclone.org/install.sh | sudo bash
           printf '%s' "$RCLONE_DRIVE_SA" > /tmp/sa.json
-          rclone sync . ":drive:" --drive-service-account-file /tmp/sa.json \
+          td=(); [ -n "$SHARED_DRIVE_ID" ] && td=(--drive-team-drive "$SHARED_DRIVE_ID")
+          rclone sync . ":drive:" --drive-service-account-file /tmp/sa.json "${td[@]}" \
             --drive-root-folder-id "$DRIVE_FOLDER_ID" --exclude ".git/**" --checksum -v
           rm -f /tmp/sa.json

@@ -58,7 +58,7 @@ Open an issue with the **Agent task** template → assign to **Copilot** → cho
 
 GitHub is primary. `vault-backup.yml` validates the vault and then:
 - **Gitea** push-mirror — set repo vars `GITEA_URL`, `GITEA_REPO`, `GITEA_USER` and secret `GITEA_TOKEN`. (Or create a pull mirror from the Gitea side: New Migration → GitHub → "This repository will be a mirror".)
-- **Google Drive** copy via rclone — set secret `GDRIVE_SERVICE_ACCOUNT_JSON` and var `GDRIVE_VAULT_FOLDER_ID`, and share that Drive folder with the service account's email.
+- **Google Drive** copy via rclone — put the vault folder in a **Shared Drive** (service accounts have no My Drive storage), add the service account as a Content manager, then set secret `GDRIVE_SERVICE_ACCOUNT_JSON` and vars `GDRIVE_SHARED_DRIVE_ID` + `GDRIVE_VAULT_FOLDER_ID`.
 
 Each target skips cleanly until configured.
 
